@@ -11,8 +11,9 @@ media_library:
 
 
 backend:
-  name: test-repo
-
+#  name: test-repo
+  name: git-gateway
+  branch: master
   commit_messages:
     create: Create {{collection}} “{{slug}}”
     update: Update {{collection}} “{{slug}}”
@@ -30,7 +31,7 @@ backend:
 #  name: git-gateway
 #  branch: master
 
-#local_backend: true
+local_backend: true
 #------
 
 collections:
