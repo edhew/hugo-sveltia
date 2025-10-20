@@ -1,0 +1,13 @@
+{{ define "main" }}
+  <div class="card">
+	<h2 class="text-3xl font-bold underline">Mr.Meow</h2>
+	<div class="portrait">😽</div>
+	<div class="title">Chomper</div>
+	<div class="time"></div>
+  </div>
+  {{ .Content }}
+  {{/* range site.RegularPages }}
+    <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+    {{ .Summary }}
+  {{ end */}}
+{{ end }}

@@ -1,0 +1,63 @@
+site_url: http://localhost:1313
+
+publish_mode: editorial_workflow
+
+media_folder: "static/images/uploads"
+public_folder: "/images/uploads"
+media_library:
+  name: uploadcare
+  config:
+    publicKey: demopublickey
+
+
+backend:
+  name: test-repo
+
+  commit_messages:
+    create: Create {{collection}} “{{slug}}”
+    update: Update {{collection}} “{{slug}}”
+    delete: Delete {{collection}} “{{slug}}”
+    uploadMedia: Upload “{{path}}”
+    deleteMedia: Delete “{{path}}”
+    openAuthoring: '{{message}}'
+
+##------
+# Alternate method, this requires decap-server package:
+# `npm install decap-server`, then running `npx decap-server`
+# that starts a local proxy server at localhost:8081
+
+#backend:
+#  name: git-gateway
+#  branch: master
+
+#local_backend: true
+#------
+
+collections:
+  - name: home
+    label: Homepage
+    files:
+      - label: Home page
+        name: _index
+        file: content/_index.md
+        frontmatter_format: yaml
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Draft, name: draft, widget: boolean }
+  - name: test
+    label: Test page
+    files:
+      - label: Test page
+        name: test
+        file: content/test.md
+        frontmatter_format: yaml
+        fields:
+          - { label: Title, name: title, widget: string }
+          - { label: Draft, name: draft, widget: boolean }
+  - name: cats
+    label: Cats
+    folder: content/cats
+    create: true
+    fields:
+       - { label: Title, name: title, widget: string }
+       - { label: Draft, name: draft, widget: boolean }

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>Content Manager</title>
+  </head>
+  <body>
+    <!-- Include the script that builds the page and powers Decap CMS -->
+    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    <link href="/admin/config.yml" type="text/yaml" rel="cms-config-url">
+	<!--script type="module"-->
+	<script>
+		import CMS from "decap-cms-app";
+		// Initialize the CMS object
+		CMS.init();
+		// Now the registry is available via the CMS object.
+		CMS.registerPreviewTemplate("my-template", MyTemplate);
+	</script>
+
+
+
+  </body>
+</html>

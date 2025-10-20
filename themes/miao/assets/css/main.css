@@ -1,0 +1,42 @@
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	background-color: #5860dd;
+	font: 100%/1.45 sans-serif;
+}
+
+.card {
+	width: min(90vw, 400px);
+	background-color: #eaffc7;
+	border-radius: 1rem;
+	text-align: center;
+	margin: 15vh auto;
+	box-shadow: 0 0 1rem #0002;
+	padding: 1rem 0.75rem 1.5rem;
+
+	h2 {
+		margin-bottom: 1rem;
+	}
+}
+
+.card .title {
+	font-size: 1.3rem;
+	margin-top: 1rem;
+}
+
+.portrait {
+	font-size: 72px;
+	background-color: rgb(57, 83, 117);
+	border-radius: 50%;
+	width: 140px;
+	height: 140px;
+	border: 8px solid #333;
+	margin: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
