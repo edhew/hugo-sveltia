@@ -6,24 +6,10 @@
     <meta name="robots" content="noindex" />
     <title>Content Manager</title>
   </head>
+
   <body>
-    <!-- Include the script that builds the page and powers Decap CMS -->
+  	
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
-    <script src="preview-templates.js"></script>
     <link href="/admin/config.yml" type="text/yaml" rel="cms-config-url">
-    sdsdfsdfsdf
-	<!--script type="module"-->
-	<script>
-		import CMS from "decap-cms-app";
-		// Initialize the CMS object
-		CMS.init();
-		// Now the registry is available via the CMS object.
-
-		// For preview template, see `./preview-templates.js`
-		//CMS.registerPreviewTemplate("my-template", MyTemplate);
-	</script>
-
-
-
-  </body>
+    <script src="/admin/preview-templates.js"></script>
 </html>
