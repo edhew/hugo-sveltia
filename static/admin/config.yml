@@ -44,7 +44,28 @@ collections:
         frontmatter_format: yaml
         fields:
           - { label: Title, name: title, widget: string }
-          - { label: Draft, name: draft, widget: boolean }
+          - { label: Draft, name: draft, widget: boolean, required: false }
+          - { label: Date, name: date, widget: datetime }
+          - { label: Body, name: body, widget: markdown, default: rich_text, required: false }
+          - label: card
+            name: card
+            widget: object
+            fields:
+              - label: Honorific
+                name: honorific
+                widget: select
+                options: [ "Mr.", "Ms." ]
+                #  - { label: "Mr.", value: "Mr." }
+                #  - { label: "Ms.", value: "Ms." }
+              - label: Name
+                name: name
+                widget: string
+              - label: Portrait
+                name: portrait
+                widget: string
+              - label: Position
+                name: position
+                widget: string
   - name: test
     label: Test page
     files:
@@ -54,7 +75,7 @@ collections:
         frontmatter_format: yaml
         fields:
           - { label: Title, name: title, widget: string }
-          - { label: Draft, name: draft, widget: boolean }
+          - { label: Draft, name: draft, widget: boolean, required: false }
   - name: cats
     label: Cats
     folder: content/cats
@@ -62,4 +83,4 @@ collections:
     extension: md
     fields:
        - { label: Title, name: title, widget: string }
-       - { label: Draft, name: draft, widget: boolean }
+       - { label: Draft, name: draft, widget: boolean, required: false }

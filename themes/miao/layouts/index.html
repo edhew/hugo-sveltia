@@ -10,9 +10,9 @@
 	<body>
 		<main>
 			<div class="card">
-				<h2 class="text-3xl font-bold underline">Mr.Meow</h2>
+				<h2 class="text-3xl font-bold underline">{{ .Params.card.title }}{{ .Params.card.name }}</h2>
 				<div class="portrait">😽</div>
-				<div class="title">Chomper</div>
+				<div class="title">{{ .Params.card.position }}</div>
 				<div class="time"></div>
 			</div>
 		</main>
