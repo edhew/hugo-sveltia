@@ -11,5 +11,19 @@
   	
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
     <link href="/admin/config.yml" type="text/yaml" rel="cms-config-url">
-    <script src="/admin/preview-templates.js"></script>
+    <!--<script src="/admin/preview-templates.js"></script>-->
+<script>
+  var HomePreview = createClass({
+    render: function() {
+      var entry = this.props.entry;
+      return h('div', {},
+        h('h1', {}, entry.getIn(['data', 'title'])),
+        h('div', {"className": "custom-page-body-class"}, this.props.widgetFor('body'))
+      );
+    }
+  });
+
+  CMS.registerPreviewTemplate("home", HomePreview);
+  CMS.registerPreviewStyle('/css/main.css');
+</script>
 </html>

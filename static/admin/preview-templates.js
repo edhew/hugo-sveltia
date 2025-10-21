@@ -1,4 +1,22 @@
 
+const CMS = window.CMS;
+const h = window.h || CMS.h; 
+const createClass = window.createClass || CMS.createClass;
+
+// --- CRITICAL CHECK ---
+// Add this check to your file to confirm the functions are available:
+if (typeof createClass !== 'function') {
+    console.error("Decap CMS Preview Error: The 'createClass' function is still undefined. Preview rendering will fail.");
+    // If you see this error, you need to adjust the access again.
+} else {
+  console.log('--- createClass exists! ---');
+}
+
+
+
+
+
+/*
 // 1. Define your Preview Component (for the 'home' collection)
 const HomePagePreview = createClass({
   render: function() {
@@ -20,6 +38,7 @@ const HomePagePreview = createClass({
         h('h2', {}, `${honorific} ${name}`),
       );
     }) : null; // Handle case where 'cards' is null/undefined
+    */
     /*
 - label: card
             name: card
@@ -41,19 +60,33 @@ const HomePagePreview = createClass({
                 name: position
                 widget: string
 */
-          
+ /*         
     // Render the structured preview using h()
     return h('div', { className: 'homepage-preview' },
       h('h1', { className: 'site-title' }, title),
       h('section', { className: 'site-content' }, renderedCards)
     );
   }
+});*/
+
+const HomePagePreview = createClass({
+  render: function() {
+    // THIS IS PIVOTAL: If your component logic has ANY JavaScript error, 
+    // the component will silently fail to render anything in the preview pane.
+    
+    const entry = this.props.entry;
+    
+    // Check if your content field is named 'body' (the default) or 'content' 
+    // in your config.yml. This name MUST match your config.
+    const content = this.props.widgetFor('content'); // Or 'body', 'main_content', etc.
+    const title = entry.getIn(['data', 'title']);
+
+    return h('div', { className: 'homepage-preview' },
+      h('h1', { className: 'site-title' }, title),
+      h('section', { className: 'site-content' }, content)
+    );
+  }
 });
 
-// 2. Register the Preview Template
-// Maps the 'home' collection (from config.yml) to the component
 window.CMS.registerPreviewTemplate('home', HomePagePreview);
-
-// 3. Register Styles
-// Load your site's main CSS for the preview pane to use
 window.CMS.registerPreviewStyle('/css/main.css');
