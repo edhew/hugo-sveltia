@@ -47,5 +47,9 @@ The preview pane will display everything in the frontmatter of the page unformat
 
 There is a gotcha when registering preview templates, the collection name parameter for `files` collections is the `name` under the *files*, not the collection *name* itself. When the collection name is wrong, collection customization code won't be called at all.
 
+## TODO
+
+Replicate this to hugo-decap, then convert this project to sveltia.
+
 
 

@@ -42,14 +42,20 @@ card:
   position: Executive Vice President Scratch Proof Quality Assurance
   */
     	//getIn({ x: { y: { z: 123 }}}, ['x', 'y', 'z'])
-    	const card = entry.getIn(['data', 'card']);
-    	console.log(card)
-    	//const honorific = getIn( card, ['entries', 'honorific'], "not set" )
+    	const honorific = entry.getIn(['data', 'card', 'honorific'], "not set" );
+      const name = entry.getIn(['data', 'card', 'name'], "not set" );
+      const portrait = entry.getIn(['data', 'card', 'portrait'], "not set" );
+      const position = entry.getIn(['data', 'card', 'position'], "not set" );
       	
     	return h('div', {className: 'container'},
       		h('h1', {style: {color: 'red'}}, title || 'Default Title'),
-      		//h('div', {className: 'card'}, honorific),
-      		h('div', {className: 'content'}, body)
+      		h('div', {className: 'card'}, 
+            h('h2', {className: 'text-3xl font-bold underline'}, `${honorific} ${name}`),
+            h('div', {className: 'portrait'}, portrait),
+            h('div', {className: 'title'}, position),
+            h('div', {className: 'time'}, "0:00")
+          ),
+      		h('div', {className: 'content bio'}, body)
      	);
 	}
 });
