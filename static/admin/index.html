@@ -5,25 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex" />
     <title>Content Manager</title>
+    
+    
   </head>
 
   <body>
   	
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
-    <link href="/admin/config.yml" type="text/yaml" rel="cms-config-url">
+	<link href="/admin/config.yml" type="text/yaml" rel="cms-config-url">
     <!--<script src="/admin/preview-templates.js"></script>-->
+    
 <script>
-  var HomePreview = createClass({
-    render: function() {
-      var entry = this.props.entry;
-      return h('div', {},
-        h('h1', {}, entry.getIn(['data', 'title'])),
-        h('div', {"className": "custom-page-body-class"}, this.props.widgetFor('body'))
-      );
-    }
-  });
+// https://decapcms.org/docs/customization/
 
-  CMS.registerPreviewTemplate("home", HomePreview);
-  CMS.registerPreviewStyle('/css/main.css');
+/*
+var CardPreview = this.props.widgetsFor('authors').map(function(author, index) {
+        return h('div', {key: index},
+          h('hr', {}),
+          h('strong', {}, author.getIn(['data', 'name'])),
+          author.getIn(['widgets', 'description'])
+        );
+      })
+    );
+*/
+var HomePreview = createClass({
+	render: function() {
+		var entry = this.props.entry;
+    	var title = entry.getIn(['data', 'title']);
+    	var body = this.props.widgetFor('body');
+    	console.log(entry)
+    	/*
+card:
+  honorific: Mr.
+  name: Miao
+  portrait: 😽
+  position: Executive Vice President Scratch Proof Quality Assurance
+  */
+    	//getIn({ x: { y: { z: 123 }}}, ['x', 'y', 'z'])
+    	const card = entry.getIn(['data', 'card']);
+    	console.log(card)
+    	//const honorific = getIn( card, ['entries', 'honorific'], "not set" )
+      	
+    	return h('div', {className: 'container'},
+      		h('h1', {style: {color: 'red'}}, title || 'Default Title'),
+      		//h('div', {className: 'card'}, honorific),
+      		h('div', {className: 'content'}, body)
+     	);
+	}
+});
+
+CMS.registerPreviewTemplate('_index', HomePreview);
+CMS.registerPreviewStyle('/css/main.css');
+
 </script>
 </html>
