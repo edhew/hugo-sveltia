@@ -12,7 +12,8 @@ media_library:
 
 backend:
 #  name: test-repo
-  name: git-gateway
+  name: github
+  repo: edhew/hugo-sveltia
   branch: master
   commit_messages:
     create: Create {{collection}} “{{slug}}”
@@ -21,18 +22,6 @@ backend:
     uploadMedia: Upload “{{path}}”
     deleteMedia: Delete “{{path}}”
     openAuthoring: '{{message}}'
-
-##------
-# Alternate method, this requires decap-server package:
-# `npm install decap-server`, then running `npx decap-server`
-# that starts a local proxy server at localhost:8081
-
-#backend:
-#  name: git-gateway
-#  branch: master
-
-local_backend: true
-#------
 
 collections:
   - name: home
@@ -69,6 +58,8 @@ collections:
   - name: cats
     label: Cats
     folder: content/cats
+    # pets is Material icon name
+    icon: pets
     create: true
     extension: md
     fields:

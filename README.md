@@ -1,8 +1,8 @@
 
 
-- Project status: ⚙ Incomplete
+- Project status: ✔ Complete
 - Decap status: ✔ functional
-- Sveltia status: 🚧 working on it
+- Sveltia status: ✔ functional ❌ Sveltia documentation pending
 
 # Decap Notes:
 
@@ -52,7 +52,9 @@ number1. Commit changes to local git repo. Once Hugo is running correctly, commi
 
 Admin page should work correctly, edits should save correctly.
 
-## Customizing Preview pane
+## Customizing Preview pane in Decap
+
+(This is not supported yet in Sveltia.)
 
 Without setting up preview templates, the preview pane will not reflect your layouts.
 
@@ -82,6 +84,7 @@ This loads your styles into the Preview pane:
 ```
 CMS.registerPreviewStyle('/css/main.css');
 ```
+
 
 
 
