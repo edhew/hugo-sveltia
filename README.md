@@ -1,4 +1,8 @@
 
+Project status: Incomplete
+Decap status: functional
+Sveltia status: working on it
+
 # Decap Notes:
 
 ## Installation: Decap
