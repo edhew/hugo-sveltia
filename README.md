@@ -72,6 +72,8 @@ CMS.registerPreviewTemplate('_index', HomePreview);
 ```
 A gotcha when registering preview templates, the collection name parameter for `files` collections is the `name` under the *files*, not the collection *name* itself. If the collection name is wrong, preview customization, in this case `HomePreview` is not called at all.
 
+### Loading styles
+
 This loads your styles into the Preview pane:
 
 ```
