@@ -13,7 +13,7 @@ media_library:
 backend:
 #  name: test-repo
   name: github
-  repo: edhew/hugo-sveltia
+  repo: fake-github-username/hugo-sveltia
   branch: master
   commit_messages:
     create: Create {{collection}} “{{slug}}”
