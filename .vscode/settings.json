@@ -1,0 +1,16 @@
+{
+  "editor.tabWidth": 4,
+  "editor.printWidth": 80,
+  "editor.formatOnSave": false,
+  "[go]": {
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": null
+  },
+  "[html]": {
+    "editor.formatOnSave": false
+  },
+  "files.associations": {
+		"*html": "html",
+		"**/layouts/**/*.html": "go"
+  }
+}

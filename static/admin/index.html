@@ -31,32 +31,25 @@ var CardPreview = this.props.widgetsFor('authors').map(function(author, index) {
 var HomePreview = createClass({
 	render: function() {
 		var entry = this.props.entry;
-    	var title = entry.getIn(['data', 'title']);
-    	var body = this.props.widgetFor('body');
-    	console.log(entry)
-    	/*
-card:
-  honorific: Mr.
-  name: Miao
-  portrait: 😽
-  position: Executive Vice President Scratch Proof Quality Assurance
-  */
-    	//getIn({ x: { y: { z: 123 }}}, ['x', 'y', 'z'])
-    	const honorific = entry.getIn(['data', 'card', 'honorific'], "not set" );
-      const name = entry.getIn(['data', 'card', 'name'], "not set" );
-      const portrait = entry.getIn(['data', 'card', 'portrait'], "not set" );
-      const position = entry.getIn(['data', 'card', 'position'], "not set" );
+    var title = entry.getIn(['data', 'title']);
+    var body = this.props.widgetFor('body');
+    console.log(entry)
+    //getIn({ x: { y: { z: 123 }}}, ['x', 'y', 'z'])
+    const honorific = entry.getIn(['data', 'card', 'honorific'], "not set" );
+    const name = entry.getIn(['data', 'card', 'name'], "not set" );
+    const portrait = entry.getIn(['data', 'card', 'portrait'], "not set" );
+    const position = entry.getIn(['data', 'card', 'position'], "not set" );
       	
-    	return h('div', {className: 'container'},
-      		h('h1', {style: {color: 'red'}}, title || 'Default Title'),
-      		h('div', {className: 'card'}, 
-            h('h2', {className: 'text-3xl font-bold underline'}, `${honorific} ${name}`),
-            h('div', {className: 'portrait'}, portrait),
-            h('div', {className: 'title'}, position),
-            h('div', {className: 'time'}, "0:00")
-          ),
-      		h('div', {className: 'content bio'}, body)
-     	);
+    return h('div', {className: 'container'},
+      h('h1', {style: {color: 'red'}}, title || 'Default Title'),
+      h('div', {className: 'card'}, 
+        h('h2', {className: 'text-3xl font-bold underline'}, `${honorific} ${name}`),
+        h('div', {className: 'portrait'}, portrait),
+        h('div', {className: 'title'}, position),
+        h('div', {className: 'time'}, "0:00")
+      ),
+      h('div', {className: 'content bio'}, body)
+    );
 	}
 });
 
