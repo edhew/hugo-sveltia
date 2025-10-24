@@ -16,7 +16,7 @@ Currently, you can only migrate from Decap, see decap branch for decap setup.
 
 ## Setup
 
-1. Manually create the sveltial structure, it is identical to Decap [see docs](https://decapcms.org/docs/install-decap-cms/).
+1. Manually create the Sveltia structure, it is identical to Decap [see docs](https://decapcms.org/docs/install-decap-cms/).
 
 ```
 hugo-project/
