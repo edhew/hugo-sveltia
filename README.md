@@ -36,12 +36,11 @@ Decap admin is at `localhost:1313/admin`, but you will see a login page at this 
 
 ## Running Decap
 
-number1. Commit changes to local git repo. Once Hugo is running correctly, commit all changes to your local git repo, make sure repo status is clean. **!! IMPORTANT !!** If repo is not clean, Decap won't save correctly (it appears).
+1. Commit changes to local git repo. Once Hugo is running correctly, commit all changes to your local git repo, make sure repo status is clean. **!! IMPORTANT !!** If repo is not clean, Decap won't save, it will appear as it page edits were saved, but upon reload, changes were not saved.
 2. Launch decap proxy server in a terminal:
 
-    ```
     npx decap-server
-    ```
+	
 3. Launch another terminal for `hugo server`
 4. Visit `localhost:1313` and `localhost:1313/admin`
 
@@ -52,7 +51,6 @@ Admin page should work correctly, edits should save correctly.
 Without setting up preview templates, the preview pane will not reflect your layouts.
 
 React syntax is used to customize the preview pane, the JavaScript can be defined in admin/index.html.
-
 
 ```js
 var HomePreview = createClass({
@@ -70,11 +68,11 @@ var HomePreview = createClass({
 
 CMS.registerPreviewTemplate('_index', HomePreview);
 ```
-A gotcha when registering preview templates, the collection name parameter for `files` collections is the `name` under the *files*, not the collection *name* itself. If the collection name is wrong, preview customization, in this case `HomePreview` is not called at all.
+A gotcha when registering preview templates, the collection name parameter for `files` collections is the `name` under the *files*, not the collection *name* itself. If the collection name is wrong, preview customization, in this case `HomePreview()` is not called at all.
 
 ### Loading styles
 
-This loads your styles into the Preview pane:
+This will load your styles into the Preview pane:
 
 ```
 CMS.registerPreviewStyle('/css/main.css');
